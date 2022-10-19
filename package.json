@@ -28,7 +28,7 @@
         "cy:run:sauceDemoScenario3": "cypress run --spec cypress/integration/sauceDemoProject/test/specs/automationScenario3.spec.js --browser chrome --headed",
 
 
-        "cy:run:sauceDemoSpecs": "cypress run --spec \"cypress/integration/sauceDemoProject/test/specs/**/*.spec.js\" --reporter mocha-allure-reporter",
+        "cy:run:sauceDemoSpecs": "cypress run --spec \"cypress/integration/sauceDemoProject/test/specs/**/*.spec.js\" --browser chrome --headed --reporter mocha-allure-reporter",
 
 
         "merge:reports": "mochawesome-merge 'cypress/allure/results/specs/*.json > cypress/allure/results/mochawesome.json",
