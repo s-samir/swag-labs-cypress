@@ -1,0 +1,13 @@
+{
+    "chromeWebSecurity": false,
+    "video": false,
+
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reporterDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+    }
+
+}
