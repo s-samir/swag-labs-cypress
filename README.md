@@ -1,6 +1,3 @@
-git remote add origin https://github.com/s-samir/sauce-demo.git
-
-
 # sauce-demo-automation-task
 ###### This is a project for automation testing of *SauceDemo*.
 
