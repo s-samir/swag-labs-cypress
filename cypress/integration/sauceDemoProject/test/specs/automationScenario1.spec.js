@@ -31,7 +31,6 @@ describe('Log in and log out',function() {
         cy.login(testData.username, testData.password)
         headerPageObject.verifyBurgerMenuButtonVisible()
         headerPageObject.verifyShoppingCartButtonVisible()
-        inventoryPageObject.getSecondaryContainer()
         inventoryPageObject.verifyProductSortContainerText()
         inventoryPageObject.verifySecondaryContainerText('Products')
         inventoryPageObject.verifyUrlInventory()        
