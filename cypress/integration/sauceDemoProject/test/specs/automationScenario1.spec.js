@@ -33,7 +33,7 @@ describe('Log in and log out',function() {
         headerPageObject.verifyShoppingCartButtonVisible()
         inventoryPageObject.getSecondaryContainer()
         inventoryPageObject.verifyProductSortContainerText()
-        inventoryPageObject.verifySecondaryContainerText()
+        inventoryPageObject.verifySecondaryContainerText('Products')
         inventoryPageObject.verifyUrlInventory()        
     })
 

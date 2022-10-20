@@ -16,6 +16,12 @@ export class LoginPageObject extends BasePageObject {
 
     }
 
+    login(username, password) {
+        this.getUsernameField().type(username);
+        this.getPasswordField().type(password);
+        this.getLoginButton().click();
+    }
+
     clickLoginButton() {
         return this.getLoginButton().click();
     }

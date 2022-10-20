@@ -51,12 +51,12 @@ describe('Log in, add 2 items to cart and log out',function() {
     })
 
     it('Log in with standard_user', function() {
-        cy.login(testData.username, testData.password)
+        //cy.login(testData.username, testData.password)
+        loginPageObject.login(testData.username, testData.password);
         headerPageObject.verifyBurgerMenuButtonVisible()
         headerPageObject.verifyShoppingCartButtonVisible()
-        inventoryPageObject.getSecondaryContainer()
         inventoryPageObject.verifyProductSortContainerText()
-        inventoryPageObject.verifySecondaryContainerText()
+        inventoryPageObject.verifySecondaryContainerText('Products')
         inventoryPageObject.verifyUrlInventory()          
     })
 
@@ -74,7 +74,7 @@ describe('Log in, add 2 items to cart and log out',function() {
         inventoryPageObject.verifyShoppingCartBadge2()
         headerPageObject.clickShoppingCartButton()
         cartPageObject.verifyUrlCart()
-        inventoryPageObject.verifySecondaryContainerCart()
+        inventoryPageObject.verifySecondaryContainerText('Your Cart')
         inventoryPageObject.verifyInventoryItemName1()
         inventoryPageObject.verifyInventoryItemName2()
         checkoutPageObject.getContinueShoppingButton()
