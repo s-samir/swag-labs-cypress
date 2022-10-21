@@ -77,7 +77,6 @@ describe('Log in, add 2 items to cart and log out',function() {
         inventoryPageObject.getInventoryItemName('Sauce Labs Bike Light')
         checkoutPageObject.getContinueShoppingButton()
         checkoutPageObject.getCheckoutButton()
-
     })
 
     it('Log out with standard_user', function() {

@@ -68,24 +68,23 @@ describe('Log in, add 2 items to cart, complete checkout process and log out',fu
 
     it('Add first 2 items in the cart', function()
     {
-        inventoryPageObject.verifyInventoryItemName1()
+        inventoryPageObject.getInventoryItemName('Sauce Labs Backpack')
         inventoryPageObject.getItem4ImgLink()
         inventoryPageObject.clickAddToCartButtonItem4()
         inventoryPageObject.getRemoveButtonItem4()
-        inventoryPageObject.verifyShoppingCartBadge1()
-        inventoryPageObject.verifyInventoryItemName2()
+        inventoryPageObject.getShoppingCartBadge('1')
+        inventoryPageObject.getInventoryItemName('Sauce Labs Bike Light')
         inventoryPageObject.getItem0ImgLink()
         inventoryPageObject.clickAddToCartButtonItem0()
         inventoryPageObject.getRemoveButtonItem0()
-        inventoryPageObject.verifyShoppingCartBadge2()
+        inventoryPageObject.getShoppingCartBadge('2')
         headerPageObject.clickShoppingCartButton()
-        cartPageObject.verifyUrlCart()
+        cartPageObject.getCartUrl()
         inventoryPageObject.verifySecondaryContainerText('Your Cart')
-        inventoryPageObject.verifyInventoryItemName1()
-        inventoryPageObject.verifyInventoryItemName2()
+        inventoryPageObject.getInventoryItemName('Sauce Labs Backpack')
+        inventoryPageObject.getInventoryItemName('Sauce Labs Bike Light')
         checkoutPageObject.getContinueShoppingButton()
         checkoutPageObject.getCheckoutButton()
-
     })
 
     it('Complete checkout process', function() {
