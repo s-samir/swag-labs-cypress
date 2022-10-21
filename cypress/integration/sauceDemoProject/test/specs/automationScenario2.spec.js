@@ -44,39 +44,37 @@ describe('Log in, add 2 items to cart and log out',function() {
 
     it('Navigate to the SwagLabs URL', function() {
         basePageObject.openPage()
-        loginPageObject.verifyUrlSauceDemo()
-        loginPageObject.verifyCikicaVisible()
-        loginPageObject.verifyLoginButtonVisible()
-        loginPageObject.verifyLoginButtonEnabled()
+        loginPageObject.getLoginUrl()
+        loginPageObject.getCikica()
+        loginPageObject.getLoginButton()
     })
 
     it('Log in with standard_user', function() {
-        //cy.login(testData.username, testData.password)
         loginPageObject.login(testData.username, testData.password);
-        headerPageObject.verifyBurgerMenuButtonVisible()
-        headerPageObject.verifyShoppingCartButtonVisible()
-        inventoryPageObject.verifyProductSortContainerText()
+        headerPageObject.getBurgerMenuButton()
+        headerPageObject.getShoppingCartButton()
+        inventoryPageObject.verifyProductSortContainerText('Name (A to Z)')
         inventoryPageObject.verifySecondaryContainerText('Products')
-        inventoryPageObject.verifyUrlInventory()          
+        inventoryPageObject.getInventoryUrl()        
     })
 
     it('Add first 2 items in the cart', function()
     {
-        inventoryPageObject.verifyInventoryItemName1()
+        inventoryPageObject.getInventoryItemName('Sauce Labs Backpack')
         inventoryPageObject.getItem4ImgLink()
         inventoryPageObject.clickAddToCartButtonItem4()
         inventoryPageObject.getRemoveButtonItem4()
-        inventoryPageObject.verifyShoppingCartBadge1()
-        inventoryPageObject.verifyInventoryItemName2()
+        inventoryPageObject.getShoppingCartBadge('1')
+        inventoryPageObject.getInventoryItemName('Sauce Labs Bike Light')
         inventoryPageObject.getItem0ImgLink()
         inventoryPageObject.clickAddToCartButtonItem0()
         inventoryPageObject.getRemoveButtonItem0()
-        inventoryPageObject.verifyShoppingCartBadge2()
+        inventoryPageObject.getShoppingCartBadge('2')
         headerPageObject.clickShoppingCartButton()
-        cartPageObject.verifyUrlCart()
+        cartPageObject.getCartUrl()
         inventoryPageObject.verifySecondaryContainerText('Your Cart')
-        inventoryPageObject.verifyInventoryItemName1()
-        inventoryPageObject.verifyInventoryItemName2()
+        inventoryPageObject.getInventoryItemName('Sauce Labs Backpack')
+        inventoryPageObject.getInventoryItemName('Sauce Labs Bike Light')
         checkoutPageObject.getContinueShoppingButton()
         checkoutPageObject.getCheckoutButton()
 
@@ -84,13 +82,10 @@ describe('Log in, add 2 items to cart and log out',function() {
 
     it('Log out with standard_user', function() {
         headerPageObject.clickBurgerMenuButton()
-        inventoryPageObject.getLogoutSideBarLink()
         inventoryPageObject.clickLogoutSideBarLink()
-        loginPageObject.verifyUrlNotIncludeInventory()
-        loginPageObject.verifyCikicaVisible()
-        loginPageObject.verifyLoginButtonVisible()
-        loginPageObject.verifyLoginButtonEnabled()
-        
+        loginPageObject.getLogoutUrl()
+        loginPageObject.getCikica()
+        loginPageObject.getLoginButton()
     })
     
 })

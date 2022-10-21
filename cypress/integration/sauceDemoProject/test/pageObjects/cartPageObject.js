@@ -3,7 +3,11 @@ import { BasePageObject } from "./basePageObject";
 export class CartPageObject extends BasePageObject {
     constructor(){
         super('testData');
-        this.verifyUrlCart = e => cy.url().should('include', '/cart');
+        this.cartUrl = e => cy.url('https://www.saucedemo.com/cart.html');
 
+    }
+
+    getCartUrl() {
+        this.cartUrl().should('contain', 'cart.html');
     }
 }

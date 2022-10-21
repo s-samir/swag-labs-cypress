@@ -3,18 +3,28 @@ import { BasePageObject } from "./basePageObject";
 export class HeaderPageObject extends BasePageObject {
     constructor(){
         super('testData');
-        this.verifyBurgerMenuButtonVisible = e => cy.get("[id='react-burger-menu-btn']").should('be.visible');
-        this.verifyShoppingCartButtonVisible = e => cy.get("[id='shopping_cart_container']").should('be.visible');
+        this.burgerMenuButton = e => cy.get("[id='react-burger-menu-btn']");
+        this.shoppingCartButton = e => cy.get("[id='shopping_cart_container']");
         
     }
 
     clickShoppingCartButton() {
-        return this.verifyShoppingCartButtonVisible().click();
+        this.shoppingCartButton().click();
     }
 
     clickBurgerMenuButton() {
-        return this.verifyBurgerMenuButtonVisible().click();
+        this.burgerMenuButton().click();
     }
+
+    getBurgerMenuButton() {
+        this.burgerMenuButton().should('be.visible');
+    }
+
+    getShoppingCartButton() {
+        this.shoppingCartButton().should('be.visible');
+    }
+
+
 
 
 

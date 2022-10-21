@@ -15,14 +15,14 @@ export class CheckoutPageObject extends BasePageObject {
         this.verifyCheckouMsg = e => cy.get('.checkout_complete_container').contains(e);
         this.getPonyExpressImg = e => cy.get('.pony_express').should('be.visible');
         this.getBackToHomeButton = e => cy.get('#back-to-products').should('be.visible').should('be.enabled');
-        this.getContinueShoppingButton = e => cy.get("#continue-shopping").should('be.visible').should('be.enabled');
-        this.getCheckoutButton = e => cy.get("#checkout").should('be.visible').should('be.enabled');
-        this.getContinueButton = e => cy.get("#continue").should('be.visible').should('be.enabled');
+        this.continueShoppingButton = e => cy.get("#continue-shopping");
+        this.checkoutButton = e => cy.get("#checkout");
+        this.continueButton = e => cy.get("#continue").should('be.visible').should('be.enabled');
         this.verifyUrlCheckoutStep1 = e => cy.url().should('contain', '/checkout-step-one');
         this.verifyUrlCheckoutStep2 = e => cy.url().should('contain', '/checkout-step-two');
-        this.getFirstNameField = e => cy.get('input[name=firstName]').should('be.visible');
-        this.getLastNameField = e => cy.get('input[name=lastName]').should('be.visible');
-        this.getPostalCodeField = e => cy.get('input[name=postalCode]').should('be.visible');
+        this.firstNameField = e => cy.get('input[name=firstName]').should('be.visible');
+        this.lastNameField = e => cy.get('input[name=lastName]').should('be.visible');
+        this.postalCodeField = e => cy.get('input[name=postalCode]').should('be.visible');
         this.verifyUrlCheckoutComplete = e => cy.url().should('contain', 'complete');
         
         //actions
@@ -30,12 +30,27 @@ export class CheckoutPageObject extends BasePageObject {
 
     }
 
+    checkoutInfo(firstName, lastName, postalCode) {
+        this.firstNameField().clear().type(firstName);
+        this.lastNameField().clear().type(lastName);
+        this.postalCodeField().clear().type(postalCode);
+        this.continueButton().click();
+    }
+
     clickContinueShoppingButton() {
-        this.getContinueShoppingButton().click();
+        this.continueShoppingButton().click();
+    }
+
+    getContinueShoppingButton() {
+        this.continueShoppingButton().should('be.visible').should('be.enabled');
     }
 
     clickCheckoutButton() {
-        this.getCheckoutButton().click();
+        this.checkoutButton().click();
+    }
+
+    getCheckoutButton() {
+        this.checkoutButton().should('be.visible').should('be.enabled');
     }
 
     clickContinueButton() {

@@ -52,19 +52,18 @@ describe('Log in, add 2 items to cart, complete checkout process and log out',fu
   
     it('Navigate to the SwagLabs URL', function() {
         basePageObject.openPage()
-        loginPageObject.verifyUrlSauceDemo()
-        loginPageObject.verifyCikicaVisible()
-        loginPageObject.verifyLoginButtonVisible()
-        loginPageObject.verifyLoginButtonEnabled()
+        loginPageObject.getLoginUrl()
+        loginPageObject.getCikica()
+        loginPageObject.getLoginButton()
     })
 
     it('Log in with standard_user', function() {
-        cy.login(testData.username, testData.password)
-        headerPageObject.verifyBurgerMenuButtonVisible()
-        headerPageObject.verifyShoppingCartButtonVisible()
-        inventoryPageObject.verifyProductSortContainerText()
+        loginPageObject.login(testData.username, testData.password);
+        headerPageObject.getBurgerMenuButton()
+        headerPageObject.getShoppingCartButton()
+        inventoryPageObject.verifyProductSortContainerText('Name (A to Z)')
         inventoryPageObject.verifySecondaryContainerText('Products')
-        inventoryPageObject.verifyUrlInventory()           
+        inventoryPageObject.getInventoryUrl()        
     })
 
     it('Add first 2 items in the cart', function()
@@ -93,7 +92,7 @@ describe('Log in, add 2 items to cart, complete checkout process and log out',fu
         checkoutPageObject.clickCheckoutButton()
         checkoutPageObject.verifyUrlCheckoutStep1()
         checkoutPageObject.verifySecondaryContainerCheckoutInfo()
-        cy.checkoutInfo(testData.firstName, testData.lastName, testData.postalCode)
+        checkoutPageObject.checkoutInfo(testData.firstName, testData.lastName, testData.postalCode);
         checkoutPageObject.verifyUrlCheckoutStep2()
         inventoryPageObject.verifyInventoryItemName1()
         inventoryPageObject.verifyInventoryItemName2()
@@ -115,13 +114,10 @@ describe('Log in, add 2 items to cart, complete checkout process and log out',fu
 
     it('Log out with standard_user', function() {
         headerPageObject.clickBurgerMenuButton()
-        inventoryPageObject.getLogoutSideBarLink()
         inventoryPageObject.clickLogoutSideBarLink()
-        loginPageObject.verifyUrlNotIncludeInventory()
-        loginPageObject.verifyCikicaVisible()
-        loginPageObject.verifyLoginButtonVisible()
-        loginPageObject.verifyLoginButtonEnabled()
-        
+        loginPageObject.getLogoutUrl()
+        loginPageObject.getCikica()
+        loginPageObject.getLoginButton()
     })
     
 })

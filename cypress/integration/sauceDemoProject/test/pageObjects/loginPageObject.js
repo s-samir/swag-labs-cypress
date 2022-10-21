@@ -3,28 +3,42 @@ import { BasePageObject } from "./basePageObject";
 export class LoginPageObject extends BasePageObject {
     constructor(){
         super('testData');
-        this.getUsernameField = e => cy.get('input[name=user-name]');
-        this.getPasswordField = e => cy.get('input[name=password]');
-        this.getLoginButton = e => cy.get('input[name=login-button]');
-        this.getCikica = e => cy.get(".bot_column");
-        this.verifyCikicaVisible = e => cy.get('.bot_column').should('be.visible');
-        this.verifyLoginButtonVisible = e => cy.get('input[name=login-button]').should('be.visible');
-        this.verifyLoginButtonEnabled = e => cy.get('input[name=login-button]').should('be.enabled');
-        this.verifyUrlSauceDemo = e => cy.url().should('include', 'saucedemo');
-        this.verifyUrlNotIncludeInventory = e => cy.url().should('include', 'saucedemo').should('not.include', 'inventory');
+        this.usernameField = e => cy.get('input[name=user-name]');
+        this.passwordField = e => cy.get('input[name=password]');
+        this.loginButton = e => cy.get('input[name=login-button]');
+        this.cikica = e => cy.get(".bot_column");
+        this.loginUrl = e => cy.url('https://www.saucedemo.com/');
     
 
     }
 
     login(username, password) {
-        this.getUsernameField().type(username);
-        this.getPasswordField().type(password);
-        this.getLoginButton().click();
+        this.usernameField().clear().type(username);
+        this.passwordField().clear().type(password);
+        this.loginButton().click();
     }
 
     clickLoginButton() {
-        return this.getLoginButton().click();
+        this.loginButton().click();
     }
+
+    getCikica() {
+        this.cikica().should('be.visible');
+    }
+
+    getLoginButton() {
+        this.loginButton().should('be.visible').should('be.enabled');
+    }
+
+    getLoginUrl() {
+        this.loginUrl().should('contain', 'https://www.saucedemo.com/');
+    }
+
+    getLogoutUrl() {
+        this.loginUrl().should('not.contain', 'inventory.html');
+    }
+
+
 
 }
 
