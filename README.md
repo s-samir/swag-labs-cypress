@@ -3,8 +3,8 @@
 
 ###### This project contains 3 tests:
 - automationScenario1.spec.js
-- automationScenario1.spec.js
-- automationScenario1.spec.js
+- automationScenario2.spec.js
+- automationScenario3.spec.js
 
 ###### Run the tests with: ```npm run test:allure```
 ###### Running this custom command will run all 3 spec.js files one after another in Google Chrome (headed) and generate Allure report (in project root).
