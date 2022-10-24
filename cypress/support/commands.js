@@ -62,6 +62,8 @@ Cypress.Commands.add('restoreLocalStorage', () => {
 
 //Run sauceDemo tests:
 
+// npm run test:sauceDemoSpecs
+
 // npx cypress run --spec cypress/integration/sauceDemoProject/test/specs/automationScenario1.spec.js --headed --browser chrome
 // npx cypress run --spec cypress/integration/sauceDemoProject/test/specs/automationScenario2.spec.js --headed --browser chrome
 // npx cypress run --spec cypress/integration/sauceDemoProject/test/specs/automationScenario3.spec.js --headed --browser chrome
