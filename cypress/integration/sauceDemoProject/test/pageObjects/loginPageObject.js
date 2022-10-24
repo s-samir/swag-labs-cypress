@@ -3,6 +3,8 @@ import { BasePageObject } from "./basePageObject";
 export class LoginPageObject extends BasePageObject {
     constructor(){
         super('testData');
+        // Locators:
+        
         this.usernameField = e => cy.get('input[name=user-name]');
         this.passwordField = e => cy.get('input[name=password]');
         this.loginButton = e => cy.get('input[name=login-button]');
@@ -11,6 +13,8 @@ export class LoginPageObject extends BasePageObject {
     
 
     }
+
+    // Actions:
 
     login(username, password) {
         this.usernameField().clear().type(username);
@@ -37,8 +41,6 @@ export class LoginPageObject extends BasePageObject {
     getLogoutUrl() {
         this.loginUrl().should('not.contain', 'inventory.html');
     }
-
-
 
 }
 

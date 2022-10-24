@@ -43,6 +43,4 @@ describe('Log in and log out',function() {
         loginPageObject.getLoginButton()
     })
 
-    
-    
 })

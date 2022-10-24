@@ -7,7 +7,7 @@ import { InventoryPageObject } from "../../../sauceDemoProject/test/pageObjects/
 import { CheckoutPageObject } from "../../../sauceDemoProject/test/pageObjects/checkoutPageObject"
 import { CartPageObject } from "../../../sauceDemoProject/test/pageObjects/cartPageObject";
 
-describe('Log in, add 2 items to cart and log out',function() {
+describe('Log in, add 2 items to cart and log out', function() {
 
     afterEach(() => {
         //Code to Handle the Sesssions in cypress.

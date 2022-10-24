@@ -3,6 +3,8 @@ import { BasePageObject } from "./basePageObject";
 export class InventoryPageObject extends BasePageObject {
     constructor(){
         super('testData');
+        // Locators:
+
         this.logoutSideBarLink = e => cy.get("[id='logout_sidebar_link']");
         this.productSortContainer = e => cy.get(".product_sort_container");
         this.secondaryContainer = e => cy.get(".header_secondary_container");
@@ -14,9 +16,9 @@ export class InventoryPageObject extends BasePageObject {
         this.item0ImgLink = e => cy.get("[id='item_0_img_link']");
         this.removeButtonItem0 = e => cy.get("#remove-sauce-labs-bike-light");
         this.inventoryUrl = e => cy.url('https://www.saucedemo.com/inventory.html');
-        
-
     }
+
+    // Actions:
 
     verifyProductSortContainerText(text){
         this.productSortContainer().should('be.visible').contains(text);
@@ -74,8 +76,5 @@ export class InventoryPageObject extends BasePageObject {
     getRemoveButtonItem0() {
         this.removeButtonItem0().should('be.visible').contains('Remove');
     }
-
-
-
 
 }
