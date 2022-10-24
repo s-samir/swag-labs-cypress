@@ -3,10 +3,13 @@ import { BasePageObject } from "./basePageObject";
 export class HeaderPageObject extends BasePageObject {
     constructor(){
         super('testData');
+        // Locators:
+
         this.burgerMenuButton = e => cy.get("[id='react-burger-menu-btn']");
-        this.shoppingCartButton = e => cy.get("[id='shopping_cart_container']");
-        
+        this.shoppingCartButton = e => cy.get("[id='shopping_cart_container']"); 
     }
+
+    // Actions:
 
     clickShoppingCartButton() {
         this.shoppingCartButton().click();
@@ -23,15 +26,5 @@ export class HeaderPageObject extends BasePageObject {
     getShoppingCartButton() {
         this.shoppingCartButton().should('be.visible');
     }
-
-
-
-
-
-
-
-
-
-
 
 }
