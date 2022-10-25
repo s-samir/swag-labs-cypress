@@ -9,6 +9,17 @@
         "overwrite": false,
         "html": true,
         "json": true
-    }
+    },
+
+    "env": {
+        "petStoreUrl": "https://petstore.swagger.io/",
+        "petUrl": "https://petstore.swagger.io/v2/pet/",
+        "petId": 258963147001,
+        "petName": "doggie",
+        "updatedPetName": "snoop doggie",
+        "petStatus": "available",
+        "updatedPetStatus": "sold"
+        
+      }
 
 }
