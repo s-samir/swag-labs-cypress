@@ -16,5 +16,5 @@ _Optional:_
 ###### Using this command will run the test in Google Chrome (headed) as well and generate a Mochawesome report for that test (in project root).
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ###### This project also includes a requestMethodspec.js file created for *Swagger PetStore* API requests.
-###### Run this spec file with a custom command:
+###### Run this spec.js file with a custom command:
 ###### ```npm run test:petStore```
