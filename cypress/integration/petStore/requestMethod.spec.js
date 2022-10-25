@@ -7,7 +7,7 @@ describe('Request method - PetStore',function() {
         cy.visit(Cypress.env('petStoreUrl'));
         cy.url().should('eq', 'https://petstore.swagger.io/')
 
-        // Add a new pet to the store:
+        // Add new pet to the store:
         cy.request('POST', Cypress.env('petUrl'), { 
             id: Cypress.env('petId'), 
             name: Cypress.env('petName'), 
