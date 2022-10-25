@@ -58,7 +58,10 @@
         "tests": "npm run cy:run || npm run aftertest",
 
 
-        "aftertest": "npm run allure:report"
+        "aftertest": "npm run allure:report",
+
+
+        "test:petStore": "npx cypress run cypress run --spec cypress/integration/petStore/requestMethod.spec.js --browser chrome --headed"
 
 
     },
