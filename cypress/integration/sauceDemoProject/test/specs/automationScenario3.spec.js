@@ -9,7 +9,7 @@ import { CartPageObject } from "../pageObjects/cartPageObject"
 
 describe('Log in, add 2 items to cart, complete checkout process and log out',function() {
     
-    const basePageObject = new BasePageObject
+    const basePageObject = new BasePageObject();
     const loginPageObject = new LoginPageObject();
     const headerPageObject = new HeaderPageObject();
     const inventoryPageObject = new InventoryPageObject();
