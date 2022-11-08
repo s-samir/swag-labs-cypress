@@ -27,7 +27,7 @@ _Optional:_
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## test-api.k6.io
 ###### Automation testing of *Test API k6* requests is also added to this repo for auth testing purposes.
-###### It includes a k6.spec.js file which consists of user Register and Login tests followed by handling Bearer token needed for sending requests to private endpoints.
-###### Run k6.spec.js file with a custom command:
+###### It includes a *k6.spec.js* file which consists of user Register and Login tests followed by handling Bearer token needed for sending requests to private endpoints.
+###### Run *k6.spec.js* file with a custom command:
 ###### ```npm run test:k6```
-###### Using this command will run the test in Google Chrome (headed) as well and generate a Mochawesome report for that test (in project root).
+###### Using this command will run the tests in Google Chrome (headed) as well and generate a Mochawesome report for that test (in project root).
