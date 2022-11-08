@@ -18,8 +18,12 @@
         "petName": "doggie",
         "updatedPetName": "snoop doggie",
         "petStatus": "available",
-        "updatedPetStatus": "sold"
-        
-      }
+        "updatedPetStatus": "sold",
+
+        "k6Url": "https://test-api.k6.io/",
+        "k6UserRegisterUrl": "https://test-api.k6.io/user/register/",
+        "k6UserLoginUrl": "https://test-api.k6.io/auth/token/login/",
+        "k6CreateCrocodileUrl": "https://test-api.k6.io/my/crocodiles/"
+    }
 
 }

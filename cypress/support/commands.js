@@ -75,3 +75,5 @@ Cypress.Commands.add('restoreLocalStorage', () => {
 // npx cypress run --spec **/automationScenario3.spec.js --headed --browser chrome
 
 // npm run test:allure
+
+// npm run test:k6

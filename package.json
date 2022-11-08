@@ -61,7 +61,10 @@
         "aftertest": "npm run allure:report",
 
 
-        "test:petStore": "npx cypress run cypress run --spec cypress/integration/petStore/requestMethod.spec.js --browser chrome --headed"
+        "test:petStore": "npx cypress run --spec cypress/integration/petStore/requestMethod.spec.js --browser chrome --headed",
+
+
+        "test:k6": "npx cypress run --spec cypress/integration/testApiK6/k6.spec.js --browser chrome --headed"
 
 
     },
@@ -74,6 +77,9 @@
 
 
     "devDependencies": {
+
+
+        "@faker-js/faker": "^7.6.0",
 
 
         "@shelex/cypress-allure-plugin": "2.26.5",
